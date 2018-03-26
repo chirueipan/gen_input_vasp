@@ -1,0 +1,31 @@
+set encoding iso_8859_1
+fsize="Arial,20"
+fsize2="Arial,15"
+
+# EPS OUTPUT
+set terminal postscript eps enhanced color size 10,7
+set output 'gen.eps'
+
+set xtics (\
+"{/Symbol G}" 0.0,\
+"K" 0.165531,\
+"W" 0.220708,\
+"X" 0.298740,\
+"L" 0.433895,\
+"{/Symbol G}" 0.569050)\
+font fsize
+
+set ytics font fsize
+set ylabel "Energy (eV)" font fsize
+#set yrange [-3:3]
+
+set grid
+unset key
+
+#set multiplot layout 3,3
+#titles = "Mg-s Mg-p Mg-d Ag-s Ag-p Ag-d Sb-s Sb-p Sb-d"
+#do for [i=3:3]{
+#set title word(titles,i-2) font fsize
+plot 'out' u 1:2:3 w points pt 7 ps variable
+#}
+#unset multiplot

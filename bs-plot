@@ -1,0 +1,16 @@
+#set terminal postscript eps enhanced color font 'Helvetica,10' 
+set terminal postscript eps enhanced color font 'Helvetica,10' 
+set output "Si111-root3-slab.eps"
+set xlabel "k distance (A)"
+set ylabel "Energy (eV)"
+set key at 1.5, 0.5
+#set title "Projected band structure of Si-Ag-HCT on Ag"
+set xtics ("M" 0, "{/Symbol G}" 0.54148483, "K" 1.16673766, "M" 1.47936407)
+#set ytics 100
+#set ylabel "Frequency (cm{/Symbol ^{-1}})"
+set arrow from 0.54148483,-4 to 0.54148483,4 nohead  lt -1 lw 1
+set arrow from 1.16673766,-4 to 1.16673766,4 nohead  lt -1 lw 1
+set xrange [0:1.47936407]
+set yrange [-4:4]
+#plot "data" pt 7 title "FCC Si Band Projected on Si(111) surface" , "band-p-Ag.dat" title "Si-Ag-HCT Band structure"
+plot "Si111-root3-slab.dat" with lines title "root3-Si(111)" 
